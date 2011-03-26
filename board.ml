@@ -4,7 +4,7 @@ sig
   type piece_type
   type piece_color
   type piece
-  type move = Move of ( piece_type * piece_position ) | Castle of castle | Pass of pass 
+  type move
   type board
 
   val init_board : board (* standard starting board *)
@@ -27,6 +27,6 @@ module ChessSet(B: BOARD) : (SET with type piece = B.t) =
     type piece_type = Pawn | Knight | Bishop | Rook | Queen | King
     type piece_color = Black | White
     type piece = {name : piece_type; color: piece_color; position: piece_position}
-    type move = Move of ( piece_type * piece_position ) | Castle of castle 
+    type move = Move of ( piece_type * piece_position ) | Castle of castle | Pass of pass 
     
    end
